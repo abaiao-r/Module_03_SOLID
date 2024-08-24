@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 20:04:51 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/23 20:24:49 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/24 18:00:09 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Transmission::Transmission()
 {
-    this->currentGear = 1;
-    this->isReverse = false;
+    this->gears = {'R', 'N', '1', '2', '3', '4', '5'};
+    this->currentGearIndex = 2;
 }
 
 Transmission::Transmission(const Transmission &src)
@@ -31,18 +31,23 @@ Transmission &Transmission::operator=(const Transmission &src)
 {
     if (this != &src)
     {
-        this->currentGear = src.currentGear;
-        this->isReverse = src.isReverse;
+        this->gears = src.gears;
+        this->currentGearIndex = src.currentGearIndex;
     }
     return (*this);
 }
 
 void Transmission::shiftUp()
 {
-    if (this->currentGear < 5)
+    if (getGear() == 'R')
     {
-        this->currentGear++;
-        std::cout << "Gear shifted up to " << this->currentGear << std::endl;
+        currentGearIndex = 2;
+        std::cout << "Gear shifted up to " << getGear() << std::endl;
+    }
+    else if (this->currentGearIndex < 6)
+    {
+        this->currentGearIndex++;
+        std::cout << "Gear shifted up to " << getGear() << std::endl;
     }
     else
     {
@@ -52,16 +57,15 @@ void Transmission::shiftUp()
 
 void Transmission::shiftDown()
 {
-    if (this->currentGear > 1)
+    if (getGear() == 'R')
     {
-        //if reverse is on, reverse is turned off
-        if (this->isReverse)
-        {
-            this->isReverse = false;
-            std::cout << "Reverse gear disengaged" << std::endl;
-        }
-        this->currentGear--;
-        std::cout << "Gear shifted down to " << this->currentGear << std::endl;
+        currentGearIndex = 2;
+        std::cout << "Gear shifted down to " << getGear() << std::endl;
+    }
+    else if (this->currentGearIndex > 2)
+    {
+        this->currentGearIndex--;
+        std::cout << "Gear shifted down to " << getGear() << std::endl;
     }
     else
     {
@@ -71,18 +75,19 @@ void Transmission::shiftDown()
 
 void Transmission::reverse()
 {
-    if (this->isReverse)
+    if (getGear() == 'R')
     {
-        this->isReverse = false;
-        std::cout << "Reverse gear disengaged" << std::endl;
+        std::cout << "Gear is already in reverse" << std::endl;
     }
     else
     {
-        this->isReverse = true;
-        std::cout << "Reverse gear engaged" << std::endl;
-        //current gear is set to 1 when reverse is engaged
+        this->currentGearIndex = 0;
+        std::cout << "Gear shifted to reverse" << std::endl;
     }
 }
 
-
+const char &Transmission::getGear() const
+{
+    return (this->gears[this->currentGearIndex]);
+}
 

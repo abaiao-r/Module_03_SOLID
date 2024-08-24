@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 18:48:08 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/23 20:24:09 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/24 18:00:16 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define TRANSMISSION_HPP
 
 #include <iostream>
+#include <array>
 
 class Transmission
 {
     private:
-        int currentGear;
-        bool isReverse;
+        std::array<char, 7> gears;
+        int currentGearIndex;
         
     public:
         Transmission();
@@ -30,8 +31,7 @@ class Transmission
         void shiftUp();
         void shiftDown();
         void reverse();
-        const int &getGear() const;
-        const bool &isReverseOn() const;
+        const char &getGear() const;
 };
 
 #endif

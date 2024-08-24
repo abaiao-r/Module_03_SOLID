@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 19:36:52 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/23 19:48:00 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/24 18:04:27 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,13 @@ void Car::start() {
 void Car::stop()
 {
     engine.stop();
+    speedController.changeSpeed(0);
     brakes.applyMaxForce();
 }
 
 void Car::accelerate(int speed)
 {
-    speedControl.increaseSpeed(speed);
+    speedController.changeSpeed(speed);
 }
 
 void Car::shift_gears_up()

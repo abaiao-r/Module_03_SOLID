@@ -6,7 +6,7 @@
 #    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/23 18:06:09 by andrefranci       #+#    #+#              #
-#    Updated: 2024/08/23 18:13:56 by andrefranci      ###   ########.fr        #
+#    Updated: 2024/08/24 17:58:02 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,12 @@ OBJDIR = objs
 # Source Files
 
 SRCS =  $(SRCDIR)/main.cpp \
+		$(SRCDIR)/car.cpp \
+		$(SRCDIR)/Engine.cpp \
+		$(SRCDIR)/Brakes.cpp \
+		$(SRCDIR)/SpeedController.cpp \
+		$(SRCDIR)/Steering.cpp \
+		$(SRCDIR)/Transmission.cpp
 		
 OBJS = 	$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
