@@ -6,7 +6,7 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/23 18:06:09 by andrefranci       #+#    #+#              #
-#    Updated: 2024/08/27 16:36:21 by abaiao-r         ###   ########.fr        #
+#    Updated: 2024/08/27 20:29:12 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ OBJDIR = objs
 
 # Source Files
 
-SRCS =  $(SRCDIR)/main.cpp
+SRCS =  $(SRCDIR)/main.cpp \
+		$(SRCDIR)/command.cpp \
+		$(SRCDIR)/ThuesdayDiscountCommand.cpp \
+		$(SRCDIR)/PackageReductionDiscountCommand.cpp
 
 		
 OBJS = 	$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)

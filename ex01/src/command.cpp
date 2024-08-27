@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:34:23 by abaiao-r          #+#    #+#             */
-/*   Updated: 2024/08/27 19:51:56 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2024/08/27 20:56:35 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 int Command::_id = 0;
 
-Command::Command(void)
-{
-    this->_id = Command::_id++;
-    this->_date = "";
-    this->_client = "";
-    this->_articles = {};
-    this->_prices = {};
-}
-
-Command::Command(int id, std::string date, std::string client, 
+Command::Command(std::string date, std::string client, 
     std::unordered_map<std::string, int> articles, 
     std::unordered_map<std::string, double> prices)
 {
-    this->_id = Command::_id++;
+    this->_id = Command::_id;
+    Command::_id++;
     this->_date = date;
     this->_client = client;
     this->_articles = articles;

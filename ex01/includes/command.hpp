@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:45:51 by abaiao-r          #+#    #+#             */
-/*   Updated: 2024/08/27 19:44:13 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2024/08/27 20:56:24 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@ class Command
         std::unordered_map<std::string, double> _prices;
 
     public:
-        Command(void);
-        Command(int id, std::string date, std::string client, 
+        Command(std::string date, std::string client, 
             std::unordered_map<std::string, int> articles, 
             std::unordered_map<std::string, double> prices);
         Command(const Command &src);
         virtual ~Command();
 
-        Command &operator=(const command &src);
+        Command &operator=(const Command &src);
 
         const int &getId(void) const;
         const std::string &getDate(void) const;
