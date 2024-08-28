@@ -6,14 +6,14 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 18:11:30 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/24 18:02:04 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/24 18:16:47 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/car.hpp"
 #include "../includes/colours.hpp"
 
-int main()
+int main(void)
 {
     Car car;
 
