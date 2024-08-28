@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:35:14 by abaiao-r          #+#    #+#             */
-/*   Updated: 2024/08/27 21:04:44 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:09:21 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,10 @@ int main(void)
 
     Command *cmd3 = new PackageReductionDiscountCommand("Monday", "Jane", articles2, prices2);
     std::cout << "Total price for cmd3: " << cmd3->get_total_price() << std::endl;
-
-    // buy 150 on thuesday
-    Command *cmd4 = new ThuesdayDiscountCommand("Thuesday", "John", articles2, prices2);
-    std::cout << "Total price for cmd4: " << cmd4->get_total_price() << std::endl;
-
+    
     delete cmd1;
     delete cmd2;
     delete cmd3;
-    delete cmd4;
-
 
     return (0);
 }
