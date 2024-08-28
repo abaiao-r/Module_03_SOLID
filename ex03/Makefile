@@ -6,7 +6,7 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/23 18:06:09 by andrefranci       #+#    #+#              #
-#    Updated: 2024/08/28 19:43:48 by abaiao-r         ###   ########.fr        #
+#    Updated: 2024/08/28 20:20:41 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ OBJDIR = objs
 # Source Files
 
 SRCS =  $(SRCDIR)/main.cpp \
-		$(SRCDIR)/rectangle.cpp \
-		$(SRCDIR)/triangle.cpp \
-		$(SRCDIR)/circle.cpp \
-		$(SRCDIR)/shape.cpp
+		$(SRCDIR)/employee.cpp \
+		$(SRCDIR)/employeeManagement.cpp \
+		$(SRCDIR)/hourlyEmployee.cpp \
+		$(SRCDIR)/salariedEmployee.cpp
 
 		
 OBJS = 	$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
