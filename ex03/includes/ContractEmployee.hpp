@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TempWorker.hpp                                     :+:      :+:    :+:   */
+/*   ContractEmployee.hpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 15:49:30 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 17:48:32 by andrefranci      ###   ########.fr       */
+/*   Created: 2024/08/29 16:49:26 by andrefranci       #+#    #+#             */
+/*   Updated: 2024/08/29 16:50:44 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPWORKER_HPP
-#define TEMPWORKER_HPP
+#ifndef CONTRACTEMPLOYEE_HPP
+#define CONTRACTEMPLOYEE_HPP
 
 #include "Employee.hpp"
 
-class TempWorker : public Employee
+class ContractEmployee : public Employee
 {
     private:
-        int hoursWorked;
-        
+        int hoursMissed;
+
     public:
-        TempWorker(int hourlyValue);
-        TempWorker(const TempWorker &src);
-        ~TempWorker(void);
+        ContractEmployee(int hourlyValue);
+        ContractEmployee(const ContractEmployee &src);
+        ~ContractEmployee(void);
 
-        TempWorker &operator=(const TempWorker &src);
+        ContractEmployee &operator=(const ContractEmployee &src);
 
-        void mobilize(int hours);
+        void registerAbsence(int hours);
         int executeWorkDay(void) override;
-        int calculateMonthlyPay(void) const override;  
+        int calculateMonthlyPay(void) const override;
+
 };
 
 #endif

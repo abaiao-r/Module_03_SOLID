@@ -6,13 +6,13 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:49:44 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 16:04:33 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/29 18:56:47 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/TempWorker.hpp"
 
-TempWorker::TempWorker(int hourlyValue) : Employee(hourlyValue), hoursWorked(0)
+TempWorker::TempWorker(int value) : Employee(value), hoursWorked(0)
 {
 }
 
@@ -41,13 +41,14 @@ void TempWorker::mobilize(int hours)
 
 int TempWorker::executeWorkDay(void)
 {
-    this
+    return (this->hoursWorked);
 }
 
 int TempWorker::calculateMonthlyPay(void) const
 {
     return (this->hoursWorked * this->hourlyValue);
 }
+
 
 
 

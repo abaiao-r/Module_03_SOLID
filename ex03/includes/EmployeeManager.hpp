@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   EmployeeManagement.hpp                             :+:      :+:    :+:   */
+/*   EmployeeManager.hpp                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:36:23 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 15:55:32 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/29 17:22:29 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,24 @@
 
 #include <iostream>
 #include <vector>
-#include "employee.hpp"
+#include <algorithm>
+#include "Employee.hpp"
 
-class EmployeeManagement
+class EmployeeManager
 {
     private:
         std::vector<Employee *> employees;
         
     public:
-        EmployeeManagement(void);
-        EmployeeManagement(const EmployeeManagement &src);
-        ~EmployeeManagement(void);
+        EmployeeManager(void);
+        EmployeeManager(const EmployeeManager &src);
+        ~EmployeeManager(void);
 
-        EmployeeManagement &operator=(const EmployeeManagement &src);
+        EmployeeManager &operator=(const EmployeeManager &src);
 
         void addEmployee(Employee *employee);
         void removeEmployee(Employee *employee);
-        void executeWorday(void);
+        void executeWorkday(void);
         void calculatePayroll(void) const;
 };
 

@@ -6,7 +6,7 @@
 #    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/23 18:06:09 by andrefranci       #+#    #+#              #
-#    Updated: 2024/08/29 15:57:22 by andrefranci      ###   ########.fr        #
+#    Updated: 2024/08/29 18:20:09 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,18 @@ OBJDIR = objs
 
 SRCS =  $(SRCDIR)/main.cpp \
 		$(SRCDIR)/Employee.cpp \
-		$(SRCDIR)/EmployeeManagement.cpp \
+		$(SRCDIR)/EmployeeManager.cpp \
 		$(SRCDIR)/HourlyEmployee.cpp \
-		$(SRCDIR)/SalariedEmployee.cpp
+		$(SRCDIR)/SalariedEmployee.cpp \
+		$(SRCDIR)/TempWorker.cpp \
+		$(SRCDIR)/Apprentice.cpp \
+		$(SRCDIR)/ContractEmployee.cpp
 
 		
 OBJS = 	$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 # Targets
-NAME = Solid_Liskov_Substitution
+NAME = Solid_Interface_Segregation_Principle
 
 all: 	$(NAME)
 

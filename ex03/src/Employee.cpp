@@ -6,13 +6,13 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:45:58 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 15:56:24 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/29 18:15:25 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Employee.hpp"
 
-Employee::Employee(int hourlyValue) : hourlyValue(hourlyValue)
+Employee::Employee(int value) : hourlyValue(value)
 {
 }
 

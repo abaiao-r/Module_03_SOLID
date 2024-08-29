@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TempWorker.hpp                                     :+:      :+:    :+:   */
+/*   Apprentice.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 15:49:30 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 17:48:32 by andrefranci      ###   ########.fr       */
+/*   Created: 2024/08/29 17:01:09 by andrefranci       #+#    #+#             */
+/*   Updated: 2024/08/29 17:10:52 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPWORKER_HPP
-#define TEMPWORKER_HPP
+#ifndef APPRENTICE_HPP
+#define APPRENTICE_HPP
 
 #include "Employee.hpp"
 
-class TempWorker : public Employee
+class Apprentice : public Employee
 {
     private:
-        int hoursWorked;
-        
+        int hoursMissed;
+        int schoolHours;
+
     public:
-        TempWorker(int hourlyValue);
-        TempWorker(const TempWorker &src);
-        ~TempWorker(void);
+        Apprentice(int hourlyValue);
+        Apprentice(const Apprentice &src);
+        ~Apprentice(void);
 
-        TempWorker &operator=(const TempWorker &src);
+        Apprentice &operator=(const Apprentice &src);
 
-        void mobilize(int hours);
+        void registerAbsence(int hours);
+        void registerSchoolHours(int hours);
         int executeWorkDay(void) override;
-        int calculateMonthlyPay(void) const override;  
+        int calculateMonthlyPay(void) const override;
+        
 };
 
 #endif
