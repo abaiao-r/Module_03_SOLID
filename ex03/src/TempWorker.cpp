@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:49:44 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 18:56:47 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 16:19:25 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void TempWorker::mobilize(int hours)
 
 int TempWorker::executeWorkDay(void)
 {
+    this->mobilize(7);
     return (this->hoursWorked);
 }
 
@@ -48,6 +49,7 @@ int TempWorker::calculateMonthlyPay(void) const
 {
     return (this->hoursWorked * this->hourlyValue);
 }
+
 
 
 

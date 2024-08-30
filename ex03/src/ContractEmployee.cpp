@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:51:04 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 19:05:23 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 15:33:58 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,16 @@ void ContractEmployee::registerAbsence(int hours)
 
 int ContractEmployee::executeWorkDay(void)
 {
-    return (7);
+    this->hoursWorked += 7;
+    return (this->hoursWorked);
 }
 
 int ContractEmployee::calculateMonthlyPay(void) const
 {
-    return ((30 * 7 - this->hoursMissed) * this->hourlyValue);
+    return ((this->hoursWorked - this->hoursMissed) * this->hourlyValue);
 }
+
+
 
 
 

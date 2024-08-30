@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:44:21 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 17:48:11 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 15:26:32 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Employee
 {
     protected:
         int hourlyValue;
+        int hoursWorked;
 
     public:
         Employee(int hourlyValue);

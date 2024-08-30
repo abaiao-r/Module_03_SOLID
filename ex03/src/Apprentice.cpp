@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:01:20 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/29 18:32:16 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 15:28:57 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,14 @@ void Apprentice::registerSchoolHours(int hours)
 
 int Apprentice::executeWorkDay(void)
 {
-    return (7);
+    this->hoursWorked +=7;
+    return (this->hoursWorked);
+
 }
 
 int Apprentice::calculateMonthlyPay(void) const
 {
-    int workHours = (30 * 8 - this->hoursMissed - this->schoolHours);
+    int workHours = (this->hoursWorked - this->hoursMissed - this->schoolHours);
     return ((workHours* this->hourlyValue) + (this->schoolHours * this->hourlyValue / 2));
 }
 

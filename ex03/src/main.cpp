@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:12:01 by abaiao-r          #+#    #+#             */
-/*   Updated: 2024/08/29 17:34:48 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 16:16:42 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,29 +21,25 @@ int main(void)
 {
     EmployeeManager manager;
 
-    TempWorker* temp = new TempWorker(20);
-    ContractEmployee* contract = new ContractEmployee(15);
+    TempWorker* temp = new TempWorker(10);
+    ContractEmployee* contract = new ContractEmployee(10);
     Apprentice* apprentice = new Apprentice(10);
 
     manager.addEmployee(temp);
     manager.addEmployee(contract);
     manager.addEmployee(apprentice);
 
-    manager.executeWorkday();
+    manager.executeWorkday(); // All employees work 7 hours
 
-    temp->mobilize(14);  // TempWorker works extra 14 hours
+    temp->mobilize(10);  // TempWorker works extra 10 hours
     contract->registerAbsence(7);  // ContractEmployee misses 7 hours
-    apprentice->registerSchoolHours(10);  // Apprentice goes to school for 10 hours
+    apprentice->registerSchoolHours(7);  // Apprentice goes to school for 7 hours
 
     manager.calculatePayroll();
 
     manager.removeEmployee(temp);
     manager.removeEmployee(contract);
     manager.removeEmployee(apprentice);
-
-    delete temp;
-    delete contract;
-    delete apprentice;
 
     return 0;
 }
