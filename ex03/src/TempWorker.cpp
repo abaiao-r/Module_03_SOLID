@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:49:44 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/30 16:19:25 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/08/30 16:24:17 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void TempWorker::mobilize(int hours)
 int TempWorker::executeWorkDay(void)
 {
     this->mobilize(7);
-    return (this->hoursWorked);
+    return (this->hoursWorked);    git push --force origin master
 }
 
 int TempWorker::calculateMonthlyPay(void) const
