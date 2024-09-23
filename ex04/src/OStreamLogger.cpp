@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   OStreamLogger.cpp                                   :+:      :+:    :+:   */
+/*   OStreamLogger.cpp                                   :+:      :+:    :+: */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,5 +18,5 @@ OStreamLogger::OStreamLogger(std::ostream &os) : outStream(os)
 
 void OStreamLogger::write(const std::string &message)
 {
-    outStream << message << std::endl;
+	outStream << message << std::endl;
 }

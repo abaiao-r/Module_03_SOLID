@@ -16,11 +16,13 @@ Rectangle::Rectangle(void) : _width(0), _height(0)
 {
 }
 
-Rectangle::Rectangle(double width, double height) : _width(width), _height(height)
+Rectangle::Rectangle(double width, double height)
+	: _width(width), _height(height)
 {
 }
 
-Rectangle::Rectangle(Rectangle const &src) : _width(src._width), _height(src._height)
+Rectangle::Rectangle(Rectangle const &src)
+	: _width(src._width), _height(src._height)
 {
 }
 
@@ -30,21 +32,20 @@ Rectangle::~Rectangle(void)
 
 Rectangle &Rectangle::operator=(Rectangle const &src)
 {
-    if (this != &src)
-    {
-        _width = src._width;
-        _height = src._height;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		_width = src._width;
+		_height = src._height;
+	}
+	return (*this);
 }
 
 double Rectangle::area(void) const
 {
-    return (this->_width * this->_height);
+	return (this->_width * this->_height);
 }
 
 double Rectangle::perimeter(void) const
 {
-    return (2 * (this->_width + this->_height));
+	return (2 * (this->_width + this->_height));
 }
-

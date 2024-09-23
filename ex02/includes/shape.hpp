@@ -17,12 +17,11 @@
 
 class Shape
 {
-    public:
-        virtual ~Shape(void);
+	public:
+		virtual ~Shape(void);
 
-        virtual double area(void) const = 0;
-        virtual double perimeter(void) const = 0;
+		virtual double area(void) const = 0;
+		virtual double perimeter(void) const = 0;
 };
 
-#endif // SHAPE_HPP
-
+#endif	// SHAPE_HPP

@@ -12,19 +12,20 @@
 
 #include "../includes/DateHeaderLogger.hpp"
 
-DateHeaderLogger::DateHeaderLogger(std::unique_ptr<ILogger> loggerPtr) : logger(std::move(loggerPtr))
+DateHeaderLogger::DateHeaderLogger(std::unique_ptr<ILogger> loggerPtr)
+	: logger(std::move(loggerPtr))
 {
 }
 
 void DateHeaderLogger::write(const std::string &message)
 {
-    logger->write(getCurrentTime() + message);
+	logger->write(getCurrentTime() + message);
 }
 
 std::string DateHeaderLogger::getCurrentTime() const
 {
-    std::time_t now = std::time(nullptr);
-    std::string timeStr = std::ctime(&now);
-    timeStr.pop_back(); // remove newline
-    return ("[" + timeStr + "] ");
+	std::time_t now = std::time(nullptr);
+	std::string timeStr = std::ctime(&now);
+	timeStr.pop_back();	 // remove newline
+	return ("[" + timeStr + "] ");
 }

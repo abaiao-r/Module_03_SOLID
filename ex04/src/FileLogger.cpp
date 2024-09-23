@@ -14,18 +14,18 @@
 
 FileLogger::FileLogger(const std::string &filename) : outfile(filename)
 {
-    if (!outfile)
-    {
-        throw std::ios_base::failure("Cannot open file");
-    }
+	if (!outfile)
+	{
+		throw std::ios_base::failure("Cannot open file");
+	}
 }
 
 FileLogger::~FileLogger()
 {
-    outfile.close();
+	outfile.close();
 }
 
 void FileLogger::write(const std::string &message)
 {
-    outfile << message << std::endl;
+	outfile << message << std::endl;
 }

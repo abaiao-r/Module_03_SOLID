@@ -12,13 +12,17 @@
 
 #include "../includes/PackageReductionDiscountCommand.hpp"
 
-PackageReductionDiscountCommand::PackageReductionDiscountCommand(std::string date, std::string client, 
-    std::unordered_map<std::string, int> articles, 
-    std::unordered_map<std::string, double> prices) : Command(date, client, articles, prices)
+PackageReductionDiscountCommand::PackageReductionDiscountCommand(
+	std::string date, std::string client,
+	std::unordered_map<std::string, int>	articles,
+	std::unordered_map<std::string, double> prices)
+	: Command(date, client, articles, prices)
 {
 }
 
-PackageReductionDiscountCommand::PackageReductionDiscountCommand(const PackageReductionDiscountCommand &src) : Command(src)
+PackageReductionDiscountCommand::PackageReductionDiscountCommand(
+	const PackageReductionDiscountCommand &src)
+	: Command(src)
 {
 }
 
@@ -26,23 +30,23 @@ PackageReductionDiscountCommand::~PackageReductionDiscountCommand(void)
 {
 }
 
-PackageReductionDiscountCommand &PackageReductionDiscountCommand::operator=(const PackageReductionDiscountCommand &src)
+PackageReductionDiscountCommand &PackageReductionDiscountCommand::operator=(
+	const PackageReductionDiscountCommand &src)
 {
-    if(this != &src)
-    {
-        Command::operator=(src);
-    }
-    return (*this);
+	if (this != &src)
+	{
+		Command::operator=(src);
+	}
+	return (*this);
 }
 
 double PackageReductionDiscountCommand::get_total_price(void) const
 {
-    double total = Command::get_total_price();
-    if (total > 150)
-    {
-        total -= 10;
-    }
+	double total = Command::get_total_price();
+	if (total > 150)
+	{
+		total -= 10;
+	}
 
-    return (total);
+	return (total);
 }
-

@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 19:36:52 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/24 18:04:27 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/09/24 00:14:26 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,82 +14,85 @@
 
 Car::Car() : engine(), transmission(), steering(), brakes(), speedController()
 {
-    std::cout << BLUE << "Car created" << RESET << std::endl;
+	std::cout << BLUE << "Car created" << RESET << std::endl;
 }
 
-Car::Car(const Car &src) : engine(src.engine), transmission(src.transmission), steering(src.steering), brakes(src.brakes), speedController(src.speedController)
+Car::Car(const Car &src)
+	: engine(src.engine),
+	  transmission(src.transmission),
+	  steering(src.steering),
+	  brakes(src.brakes),
+	  speedController(src.speedController)
 {
-    std::cout << BLUE << "Car created" << RESET << std::endl;
+	std::cout << BLUE << "Car created" << RESET << std::endl;
 }
 
 Car::~Car()
 {
-    std::cout << BOLDRED << "Car destroyed" << RESET << std::endl;
+	std::cout << BOLDRED << "Car destroyed" << RESET << std::endl;
 }
 
 Car &Car::operator=(const Car &src)
 {
-    if (this != &src)
-    {
-        engine = src.engine;
-        transmission = src.transmission;
-        steering = src.steering;
-        brakes = src.brakes;
-        speedController = src.speedController;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		engine = src.engine;
+		transmission = src.transmission;
+		steering = src.steering;
+		brakes = src.brakes;
+		speedController = src.speedController;
+	}
+	return (*this);
 }
 
-void Car::start() {
-    engine.start();
+void Car::start()
+{
+	engine.start();
 }
 
 void Car::stop()
 {
-    engine.stop();
-    speedController.changeSpeed(0);
-    brakes.applyMaxForce();
+	engine.stop();
+	speedController.changeSpeed(0);
+	brakes.applyMaxForce();
 }
 
 void Car::accelerate(int speed)
 {
-    speedController.changeSpeed(speed);
+	speedController.changeSpeed(speed);
 }
 
 void Car::shift_gears_up()
 {
-    transmission.shiftUp();
+	transmission.shiftUp();
 }
 
 void Car::shift_gears_down()
 {
-    transmission.shiftDown();
+	transmission.shiftDown();
 }
 
 void Car::reverse()
 {
-    transmission.reverse();
+	transmission.reverse();
 }
 
 void Car::turn_wheel(int angle)
 {
-    steering.turn(angle);
+	steering.turn(angle);
 }
 
 void Car::straighten_wheels()
 {
-    steering.straighten();
+	steering.straighten();
 }
 
 void Car::apply_force_on_brakes(int force)
 {
-    brakes.applyForce(force);
+	brakes.applyForce(force);
 }
 
 void Car::apply_emergency_brakes()
 {
-    brakes.applyMaxForce();
+	brakes.applyMaxForce();
 }
-
-
-

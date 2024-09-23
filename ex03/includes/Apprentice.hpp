@@ -17,22 +17,21 @@
 
 class Apprentice : public Employee
 {
-    private:
-        int hoursMissed;
-        int schoolHours;
+	private:
+		int hoursMissed;
+		int schoolHours;
 
-    public:
-        Apprentice(int hourlyValue);
-        Apprentice(const Apprentice &src);
-        ~Apprentice(void);
+	public:
+		Apprentice(int hourlyValue);
+		Apprentice(const Apprentice &src);
+		~Apprentice(void);
 
-        Apprentice &operator=(const Apprentice &src);
+		Apprentice &operator=(const Apprentice &src);
 
-        void registerAbsence(int hours);
-        void registerSchoolHours(int hours);
-        int executeWorkDay(void) override;
-        int calculateMonthlyPay(void) const override;
-        
+		void registerAbsence(int hours);
+		void registerSchoolHours(int hours);
+		int	 executeWorkDay(void) override;
+		int	 calculateMonthlyPay(void) const override;
 };
 
 #endif

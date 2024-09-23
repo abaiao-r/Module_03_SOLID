@@ -17,19 +17,19 @@
 
 class Employee
 {
-    protected:
-        int hourlyValue;
-        int hoursWorked;
+	protected:
+		int hourlyValue;
+		int hoursWorked;
 
-    public:
-        Employee(int hourlyValue);
-        Employee(const Employee &src);
-        virtual ~Employee(void);
+	public:
+		Employee(int hourlyValue);
+		Employee(const Employee &src);
+		virtual ~Employee(void);
 
-        Employee &operator=(const Employee &src);
+		Employee &operator=(const Employee &src);
 
-        virtual int executeWorkDay(void) = 0;
-        virtual int calculateMonthlyPay(void) const = 0;
+		virtual int executeWorkDay(void) = 0;
+		virtual int calculateMonthlyPay(void) const = 0;
 };
 
 #endif

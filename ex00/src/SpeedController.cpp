@@ -14,12 +14,12 @@
 
 SpeedController::SpeedController()
 {
-    this->currentSpeed = 0;
+	this->currentSpeed = 0;
 }
 
 SpeedController::SpeedController(const SpeedController &src)
 {
-    *this = src;
+	*this = src;
 }
 
 SpeedController::~SpeedController()
@@ -28,27 +28,28 @@ SpeedController::~SpeedController()
 
 SpeedController &SpeedController::operator=(const SpeedController &src)
 {
-    if (this != &src)
-    {
-        this->currentSpeed = src.currentSpeed;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		this->currentSpeed = src.currentSpeed;
+	}
+	return (*this);
 }
 
 void SpeedController::changeSpeed(int speed)
 {
-    if (speed != getSpeed())
-    {
-        this->currentSpeed = speed;
-        std::cout << "Speed changed to " << getSpeed() << " km/h" << std::endl;
-    }
-    else
-    {
-        std::cout << "Speed is already at " << getSpeed() << " km/h" << std::endl;
-    }
+	if (speed != getSpeed())
+	{
+		this->currentSpeed = speed;
+		std::cout << "Speed changed to " << getSpeed() << " km/h" << std::endl;
+	}
+	else
+	{
+		std::cout << "Speed is already at " << getSpeed() << " km/h"
+				  << std::endl;
+	}
 }
 
 const int &SpeedController::getSpeed() const
 {
-    return (this->currentSpeed);
+	return (this->currentSpeed);
 }

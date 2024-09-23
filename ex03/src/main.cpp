@@ -10,41 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/EmployeeManager.hpp"
-#include "../includes/TempWorker.hpp"
-#include "../includes/ContractEmployee.hpp"
-#include "../includes/Apprentice.hpp"
 #include <iostream>
 
+#include "../includes/Apprentice.hpp"
+#include "../includes/ContractEmployee.hpp"
+#include "../includes/EmployeeManager.hpp"
+#include "../includes/TempWorker.hpp"
 
 int main(void)
 {
-    EmployeeManager manager;
+	EmployeeManager manager;
 
-    TempWorker* temp = new TempWorker(10);
-    ContractEmployee* contract = new ContractEmployee(10);
-    Apprentice* apprentice = new Apprentice(10);
+	TempWorker	   *temp = new TempWorker(10);
+	ContractEmployee *contract = new ContractEmployee(10);
+	Apprentice	   *apprentice = new Apprentice(10);
 
-    manager.addEmployee(temp);
-    manager.addEmployee(contract);
-    manager.addEmployee(apprentice);
+	manager.addEmployee(temp);
+	manager.addEmployee(contract);
+	manager.addEmployee(apprentice);
 
-    manager.executeWorkday(); // All employees work 7 hours
+	manager.executeWorkday();  // All employees work 7 hours
 
-    temp->mobilize(10);  // TempWorker works extra 10 hours
-    contract->registerAbsence(7);  // ContractEmployee misses 7 hours
-    apprentice->registerSchoolHours(7);  // Apprentice goes to school for 7 hours
+	temp->mobilize(10);			   // TempWorker works extra 10 hours
+	contract->registerAbsence(7);  // ContractEmployee misses 7 hours
+	apprentice->registerSchoolHours(
+		7);	 // Apprentice goes to school for 7 hours
 
-    manager.calculatePayroll();
+	manager.calculatePayroll();
 
-    manager.removeEmployee(temp);
-    manager.removeEmployee(contract);
-    manager.removeEmployee(apprentice);
+	manager.removeEmployee(temp);
+	manager.removeEmployee(contract);
+	manager.removeEmployee(apprentice);
 
-    // delete stuff
-    delete temp;
-    delete contract;
-    delete apprentice;
+	// delete stuff
+	delete temp;
+	delete contract;
+	delete apprentice;
 
-    return 0;
+	return 0;
 }

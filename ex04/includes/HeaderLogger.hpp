@@ -13,20 +13,22 @@
 #ifndef HEADERLOGGER_HPP
 #define HEADERLOGGER_HPP
 
-#include "ILogger.hpp"
-#include <string>
-#include <memory>
 #include <ctime>
+#include <memory>
+#include <string>
+
+#include "ILogger.hpp"
 
 class HeaderLogger : public ILogger
 {
-protected:
-    std::unique_ptr<ILogger> logger;
-    std::string header;
+	protected:
+		std::unique_ptr<ILogger> logger;
+		std::string				 header;
 
-public:
-    HeaderLogger(std::unique_ptr<ILogger> loggerPtr, const std::string &headerText);
-    virtual void write(const std::string &message) override;
+	public:
+		HeaderLogger(std::unique_ptr<ILogger> loggerPtr,
+					 const std::string	   &headerText);
+		virtual void write(const std::string &message) override;
 };
 
 #endif

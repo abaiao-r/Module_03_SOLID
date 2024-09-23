@@ -17,20 +17,19 @@
 
 class ContractEmployee : public Employee
 {
-    private:
-        int hoursMissed;
+	private:
+		int hoursMissed;
 
-    public:
-        ContractEmployee(int hourlyValue);
-        ContractEmployee(const ContractEmployee &src);
-        ~ContractEmployee(void);
+	public:
+		ContractEmployee(int hourlyValue);
+		ContractEmployee(const ContractEmployee &src);
+		~ContractEmployee(void);
 
-        ContractEmployee &operator=(const ContractEmployee &src);
+		ContractEmployee &operator=(const ContractEmployee &src);
 
-        void registerAbsence(int hours);
-        int executeWorkDay(void) override;
-        int calculateMonthlyPay(void) const override;
-
+		void registerAbsence(int hours);
+		int	 executeWorkDay(void) override;
+		int	 calculateMonthlyPay(void) const override;
 };
 
 #endif

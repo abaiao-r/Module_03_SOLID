@@ -17,21 +17,20 @@
 
 class Rectangle : public Shape
 {
-    private:
-        double _width;
-        double _height;
-        
-    public:
-        Rectangle(void);
-        Rectangle(double width, double height);
-        Rectangle(Rectangle const &src);
-        virtual ~Rectangle(void);
+	private:
+		double _width;
+		double _height;
 
-        Rectangle &operator=(Rectangle const &src);
+	public:
+		Rectangle(void);
+		Rectangle(double width, double height);
+		Rectangle(Rectangle const &src);
+		virtual ~Rectangle(void);
 
-        double area(void) const override;
-        double perimeter(void) const override;
+		Rectangle &operator=(Rectangle const &src);
+
+		double area(void) const override;
+		double perimeter(void) const override;
 };
 
-#endif // RECTANGLE_HPP
-
+#endif	// RECTANGLE_HPP

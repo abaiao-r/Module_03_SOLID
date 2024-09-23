@@ -11,22 +11,23 @@
 /* ************************************************************************** */
 
 #ifndef DATEHEADERLOGGER_HPP
-# define DATEHEADERLOGGER_HPP
+#define DATEHEADERLOGGER_HPP
 
-# include "ILogger.hpp"
-# include <string>
-# include <memory>
-# include <ctime>
+#include <ctime>
+#include <memory>
+#include <string>
+
+#include "ILogger.hpp"
 
 class DateHeaderLogger : public ILogger
 {
-    private:
-        std::unique_ptr<ILogger> logger;
-        std::string getCurrentTime() const;
-    
-    public:
-        DateHeaderLogger(std::unique_ptr<ILogger> loggerPtr);
-        virtual void write(const std::string &message) override;
+	private:
+		std::unique_ptr<ILogger> logger;
+		std::string				 getCurrentTime() const;
+
+	public:
+		DateHeaderLogger(std::unique_ptr<ILogger> loggerPtr);
+		virtual void write(const std::string &message) override;
 };
 
 #endif

@@ -17,22 +17,22 @@
 
 class Triangle : public Shape
 {
-    private:
-        double _side1;
-        double _side2;
-        double _side3;
-        double _height;
-        
-    public:
-        Triangle(void);
-        Triangle(double side1, double side2, double side3, double height);
-        Triangle(Triangle const &src);
-        virtual ~Triangle(void);
+	private:
+		double _side1;
+		double _side2;
+		double _side3;
+		double _height;
 
-        Triangle &operator=(Triangle const &src);
+	public:
+		Triangle(void);
+		Triangle(double side1, double side2, double side3, double height);
+		Triangle(Triangle const &src);
+		virtual ~Triangle(void);
 
-        double area(void) const override;
-        double perimeter(void) const override;
+		Triangle &operator=(Triangle const &src);
+
+		double area(void) const override;
+		double perimeter(void) const override;
 };
 
-#endif // TRIANGLE_HPP
+#endif	// TRIANGLE_HPP

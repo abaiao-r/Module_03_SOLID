@@ -12,14 +12,13 @@
 
 #include "../includes/HeaderLogger.hpp"
 
-HeaderLogger::HeaderLogger(std::unique_ptr<ILogger> loggerPtr, const std::string &headerText) : logger(std::move(loggerPtr)), header(headerText)
+HeaderLogger::HeaderLogger(std::unique_ptr<ILogger> loggerPtr,
+						   const std::string		 &headerText)
+	: logger(std::move(loggerPtr)), header(headerText)
 {
 }
 
 void HeaderLogger::write(const std::string &message)
 {
-    logger->write(header + message);
+	logger->write(header + message);
 }
-
-
-

@@ -14,6 +14,5 @@
 
 Shape::~Shape(void)
 {
-    return;
+	return;
 }
-

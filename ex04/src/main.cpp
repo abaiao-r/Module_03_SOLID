@@ -10,38 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ILogger.hpp"
-#include "../includes/FileLogger.hpp"
-#include "../includes/OStreamLogger.hpp"
-#include "../includes/HeaderLogger.hpp"
-#include "../includes/DateHeaderLogger.hpp"
-
-#include <vector>
 #include <iostream>
 #include <memory>
+#include <vector>
 
-int main() {
-    std::vector<std::unique_ptr<ILogger>> loggers;
+#include "../includes/DateHeaderLogger.hpp"
+#include "../includes/FileLogger.hpp"
+#include "../includes/HeaderLogger.hpp"
+#include "../includes/ILogger.hpp"
+#include "../includes/OStreamLogger.hpp"
 
-    // Using std::unique_ptr with new instead of std::make_unique
-    loggers.push_back(std::unique_ptr<ILogger>(new FileLogger("log.txt")));
-    loggers.push_back(std::unique_ptr<ILogger>(new OStreamLogger(std::cout)));
+int main()
+{
+	std::vector<std::unique_ptr<ILogger>> loggers;
 
-    // Decorated loggers with headers
-    loggers.push_back(std::unique_ptr<ILogger>(
-        new HeaderLogger(std::unique_ptr<ILogger>(new FileLogger("log_with_header.txt")), "[Header] ")));
-    loggers.push_back(std::unique_ptr<ILogger>(
-        new DateHeaderLogger(std::unique_ptr<ILogger>(new OStreamLogger(std::cout)))));
+	// Using std::unique_ptr with new instead of std::make_unique
+	loggers.push_back(std::unique_ptr<ILogger>(new FileLogger("log.txt")));
+	loggers.push_back(std::unique_ptr<ILogger>(new OStreamLogger(std::cout)));
 
-    std::vector<std::string> messages = {"First log entry", "Second log entry", "Third log entry"};
+	// Decorated loggers with headers
+	loggers.push_back(std::unique_ptr<ILogger>(new HeaderLogger(
+		std::unique_ptr<ILogger>(new FileLogger("log_with_header.txt")),
+		"[Header] ")));
+	loggers.push_back(std::unique_ptr<ILogger>(new DateHeaderLogger(
+		std::unique_ptr<ILogger>(new OStreamLogger(std::cout)))));
 
-    for (const auto& message : messages)
-    {
-        for (const auto& logger : loggers)
-        {
-            logger->write(message);
-        }
-    }
+	std::vector<std::string> messages
+		= {"First log entry", "Second log entry", "Third log entry"};
 
-    return (0);
+	for (const auto &message : messages)
+	{
+		for (const auto &logger : loggers)
+		{
+			logger->write(message);
+		}
+	}
+
+	return (0);
 }

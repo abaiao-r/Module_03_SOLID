@@ -17,19 +17,19 @@
 
 class TempWorker : public Employee
 {
-    private:
-        int hoursWorked;
-        
-    public:
-        TempWorker(int hourlyValue);
-        TempWorker(const TempWorker &src);
-        ~TempWorker(void);
+	private:
+		int hoursWorked;
 
-        TempWorker &operator=(const TempWorker &src);
+	public:
+		TempWorker(int hourlyValue);
+		TempWorker(const TempWorker &src);
+		~TempWorker(void);
 
-        void mobilize(int hours);
-        int executeWorkDay(void) override;
-        int calculateMonthlyPay(void) const override;  
+		TempWorker &operator=(const TempWorker &src);
+
+		void mobilize(int hours);
+		int	 executeWorkDay(void) override;
+		int	 calculateMonthlyPay(void) const override;
 };
 
 #endif

@@ -26,9 +26,9 @@ Employee::~Employee(void)
 
 Employee &Employee::operator=(const Employee &src)
 {
-    if (this != &src)
-    {
-        this->hourlyValue = src.hourlyValue;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		this->hourlyValue = src.hourlyValue;
+	}
+	return (*this);
 }

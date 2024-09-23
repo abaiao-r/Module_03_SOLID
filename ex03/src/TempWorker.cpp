@@ -16,7 +16,8 @@ TempWorker::TempWorker(int value) : Employee(value), hoursWorked(0)
 {
 }
 
-TempWorker::TempWorker(const TempWorker &src) : Employee(src), hoursWorked(src.hoursWorked)
+TempWorker::TempWorker(const TempWorker &src)
+	: Employee(src), hoursWorked(src.hoursWorked)
 {
 }
 
@@ -26,32 +27,26 @@ TempWorker::~TempWorker(void)
 
 TempWorker &TempWorker::operator=(const TempWorker &src)
 {
-    if (this != &src)
-    {
-        Employee::operator=(src);
-        this->hoursWorked = src.hoursWorked;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		Employee::operator=(src);
+		this->hoursWorked = src.hoursWorked;
+	}
+	return (*this);
 }
 
 void TempWorker::mobilize(int hours)
 {
-    this->hoursWorked += hours;
+	this->hoursWorked += hours;
 }
 
 int TempWorker::executeWorkDay(void)
 {
-    this->mobilize(7);
-    return (this->hoursWorked);
+	this->mobilize(7);
+	return (this->hoursWorked);
 }
 
 int TempWorker::calculateMonthlyPay(void) const
 {
-    return (this->hoursWorked * this->hourlyValue);
+	return (this->hoursWorked * this->hourlyValue);
 }
-
-
-
-
-
-

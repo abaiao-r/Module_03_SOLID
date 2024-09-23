@@ -17,9 +17,9 @@
 
 class ILogger
 {
-public:
-    virtual ~ILogger(void) = default;
-    virtual void write(const std::string &message) = 0;
+	public:
+		virtual ~ILogger(void) = default;
+		virtual void write(const std::string &message) = 0;
 };
 
 #endif

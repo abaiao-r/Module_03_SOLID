@@ -13,27 +13,28 @@
 #ifndef EMPLOYEE_MANAGEMENT_HPP
 #define EMPLOYEE_MANAGEMENT_HPP
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
+
 #include "Employee.hpp"
 
 class EmployeeManager
 {
-    private:
-        std::vector<Employee *> employees;
-        
-    public:
-        EmployeeManager(void);
-        EmployeeManager(const EmployeeManager &src);
-        ~EmployeeManager(void);
+	private:
+		std::vector<Employee *> employees;
 
-        EmployeeManager &operator=(const EmployeeManager &src);
+	public:
+		EmployeeManager(void);
+		EmployeeManager(const EmployeeManager &src);
+		~EmployeeManager(void);
 
-        void addEmployee(Employee *employee);
-        void removeEmployee(Employee *employee);
-        void executeWorkday(void);
-        void calculatePayroll(void) const;
+		EmployeeManager &operator=(const EmployeeManager &src);
+
+		void addEmployee(Employee *employee);
+		void removeEmployee(Employee *employee);
+		void executeWorkday(void);
+		void calculatePayroll(void) const;
 };
 
 #endif

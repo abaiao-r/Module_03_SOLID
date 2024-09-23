@@ -14,12 +14,12 @@
 
 Steering::Steering(void)
 {
-    this->wheelAngle = 0;
+	this->wheelAngle = 0;
 }
 
 Steering::Steering(const Steering &src)
 {
-    *this = src;
+	*this = src;
 }
 
 Steering::~Steering(void)
@@ -28,26 +28,27 @@ Steering::~Steering(void)
 
 Steering &Steering::operator=(const Steering &src)
 {
-    if (this != &src)
-    {
-        this->wheelAngle = src.wheelAngle;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		this->wheelAngle = src.wheelAngle;
+	}
+	return (*this);
 }
 
 void Steering::turn(int angle)
 {
-    this->wheelAngle = angle;
-    std::cout << "Turning wheel by " << getWheelAngle() << " degrees" << std::endl;
+	this->wheelAngle = angle;
+	std::cout << "Turning wheel by " << getWheelAngle() << " degrees"
+			  << std::endl;
 }
 
 void Steering::straighten(void)
 {
-    this->wheelAngle = 0;
-    std::cout << "Straightening wheel" << std::endl;
+	this->wheelAngle = 0;
+	std::cout << "Straightening wheel" << std::endl;
 }
 
 const int &Steering::getWheelAngle(void) const
 {
-    return (this->wheelAngle);
+	return (this->wheelAngle);
 }

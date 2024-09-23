@@ -12,14 +12,17 @@
 
 #include "../includes/ThuesdayDiscountCommand.hpp"
 
-
-ThuesdayDiscountCommand::ThuesdayDiscountCommand(std::string date, std::string client, 
-    std::unordered_map<std::string, int> articles, 
-    std::unordered_map<std::string, double> prices) : Command(date, client, articles, prices)
+ThuesdayDiscountCommand::ThuesdayDiscountCommand(
+	std::string date, std::string client,
+	std::unordered_map<std::string, int>	articles,
+	std::unordered_map<std::string, double> prices)
+	: Command(date, client, articles, prices)
 {
 }
 
-ThuesdayDiscountCommand::ThuesdayDiscountCommand(const ThuesdayDiscountCommand &src) : Command(src)
+ThuesdayDiscountCommand::ThuesdayDiscountCommand(
+	const ThuesdayDiscountCommand &src)
+	: Command(src)
 {
 }
 
@@ -27,28 +30,27 @@ ThuesdayDiscountCommand::~ThuesdayDiscountCommand(void)
 {
 }
 
-ThuesdayDiscountCommand &ThuesdayDiscountCommand::operator=(const ThuesdayDiscountCommand &src)
+ThuesdayDiscountCommand &ThuesdayDiscountCommand::operator=(
+	const ThuesdayDiscountCommand &src)
 {
-    if(this != &src)
-    {
-        Command::operator=(src);
-    }
-    return (*this);
+	if (this != &src)
+	{
+		Command::operator=(src);
+	}
+	return (*this);
 }
 
 double ThuesdayDiscountCommand::get_total_price(void) const
 {
-    double total = Command::get_total_price();
-    if(_is_thuesday(this->getDate()))
-        total *= 0.9;
-    return (total);
+	double total = Command::get_total_price();
+	if (_is_thuesday(this->getDate()))
+		total *= 0.9;
+	return (total);
 }
 
 bool ThuesdayDiscountCommand::_is_thuesday(const std::string &date) const
 {
-    if (date == "Thuesday" || date == "thuesday")
-        return (true);
-    return (false);
+	if (date == "Thuesday" || date == "thuesday")
+		return (true);
+	return (false);
 }
-
-

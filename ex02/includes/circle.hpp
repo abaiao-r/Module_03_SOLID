@@ -13,25 +13,25 @@
 #ifndef CIRCLE_HPP
 #define CIRCLE_HPP
 
+#include <cmath>  // M_PI
+
 #include "shape.hpp"
-#include <cmath> // M_PI
 
 class Circle : public Shape
 {
-    private:
-        double _radius;
-        
-    public:
-        Circle(void);
-        Circle(double radius);
-        Circle(Circle const &src);
-        virtual ~Circle(void);
+	private:
+		double _radius;
 
-        Circle &operator=(Circle const &src);
+	public:
+		Circle(void);
+		Circle(double radius);
+		Circle(Circle const &src);
+		virtual ~Circle(void);
 
-        double area(void) const override;
-        double perimeter(void) const override;
+		Circle &operator=(Circle const &src);
+
+		double area(void) const override;
+		double perimeter(void) const override;
 };
 
-#endif // CIRCLE_HPP
-
+#endif	// CIRCLE_HPP

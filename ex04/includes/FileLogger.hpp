@@ -11,22 +11,23 @@
 /* ************************************************************************** */
 
 #ifndef FILELOGGER_HPP
-# define FILELOGGER_HPP
+#define FILELOGGER_HPP
 
-# include "ILogger.hpp"
-# include <fstream>
-# include <string>
+#include <fstream>
+#include <string>
+
+#include "ILogger.hpp"
 
 class FileLogger : public ILogger
 {
-    private:
-        std::ofstream outfile;
+	private:
+		std::ofstream outfile;
 
-    public:
-        FileLogger(const std::string &filename);
-        virtual ~FileLogger() override;
+	public:
+		FileLogger(const std::string &filename);
+		virtual ~FileLogger() override;
 
-        void write(const std::string &message) override;
+		void write(const std::string &message) override;
 };
 
 #endif

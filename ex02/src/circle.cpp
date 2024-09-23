@@ -30,22 +30,19 @@ Circle::~Circle(void)
 
 Circle &Circle::operator=(Circle const &src)
 {
-    if (this != &src)
-    {
-        _radius = src._radius;
-    }
-    return (*this);
+	if (this != &src)
+	{
+		_radius = src._radius;
+	}
+	return (*this);
 }
 
 double Circle::area(void) const
 {
-    return (M_PI * _radius * _radius);
+	return (M_PI * _radius * _radius);
 }
 
 double Circle::perimeter(void) const
 {
-    return (2 * M_PI * _radius);
+	return (2 * M_PI * _radius);
 }
-
-
-
