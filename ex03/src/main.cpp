@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:12:01 by abaiao-r          #+#    #+#             */
-/*   Updated: 2024/08/30 16:16:42 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/09/23 20:14:59 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int main(void)
     manager.removeEmployee(temp);
     manager.removeEmployee(contract);
     manager.removeEmployee(apprentice);
+
+    // delete stuff
+    delete temp;
+    delete contract;
+    delete apprentice;
 
     return 0;
 }

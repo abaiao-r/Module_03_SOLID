@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TempWorker.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:49:44 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/30 16:24:17 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/09/23 20:12:30 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void TempWorker::mobilize(int hours)
 int TempWorker::executeWorkDay(void)
 {
     this->mobilize(7);
-    return (this->hoursWorked);    git push --force origin master
+    return (this->hoursWorked);
 }
 
 int TempWorker::calculateMonthlyPay(void) const

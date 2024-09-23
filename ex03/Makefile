@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
+#    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/23 18:06:09 by andrefranci       #+#    #+#              #
-#    Updated: 2024/08/29 18:20:09 by andrefranci      ###   ########.fr        #
+#    Updated: 2024/09/23 20:12:10 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,6 @@ OBJDIR = objs
 SRCS =  $(SRCDIR)/main.cpp \
 		$(SRCDIR)/Employee.cpp \
 		$(SRCDIR)/EmployeeManager.cpp \
-		$(SRCDIR)/HourlyEmployee.cpp \
-		$(SRCDIR)/SalariedEmployee.cpp \
 		$(SRCDIR)/TempWorker.cpp \
 		$(SRCDIR)/Apprentice.cpp \
 		$(SRCDIR)/ContractEmployee.cpp

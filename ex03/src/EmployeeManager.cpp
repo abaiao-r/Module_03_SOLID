@@ -72,5 +72,6 @@ void EmployeeManager::calculatePayroll(void) const
     for (const Employee *employee : this->employees)
     {
         std::cout << "Monthly pay: " << employee->calculateMonthlyPay() << std::endl;
+        
     }
 }

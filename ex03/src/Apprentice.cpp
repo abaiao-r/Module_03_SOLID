@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Apprentice.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:01:20 by andrefranci       #+#    #+#             */
-/*   Updated: 2024/08/30 15:28:57 by andrefranci      ###   ########.fr       */
+/*   Updated: 2024/09/23 20:19:25 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int Apprentice::executeWorkDay(void)
 
 int Apprentice::calculateMonthlyPay(void) const
 {
+    //unitialized value?
     int workHours = (this->hoursWorked - this->hoursMissed - this->schoolHours);
     return ((workHours* this->hourlyValue) + (this->schoolHours * this->hourlyValue / 2));
 }
